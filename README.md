@@ -31,7 +31,60 @@ This is a live, Zoom-based course taught over a series of scheduled online sessi
 - A live lecture introducing key concepts and workflows
 - A guided hands-on demo using real transcriptomics datasets
 - Follow-up exercises and resources you can explore independently
-- Participants receive access to all lecture slides, code notebooks, data links, and recorded videos after each session.
+Participants receive access to all lecture slides, code notebooks, data links, and recorded videos after each session.
+
+## What will I learn?
+By the end of this course, you will be able to:
+
+- Analyze **bulk RNA-seq** and **single-cell RNA-seq** datasets  
+- Develop a **lightweight and reproducible pipeline** in R  
+- Apply **differential expression analysis** and functional enrichment  
+- Create **high-quality visualizations** of transcriptomic data  
+- Understand **experimental design and biases**  
+- Use **public data repositories** like GEO and recount3  
+- Leverage **AI tools** (like Copilot and ChatGPT) to boost your analysis workflow  
+- Write reproducible reports using **R Markdown** or **Quarto**
+
+  
+## Who is this course for?
+This course is ideal for:
+
+- Graduate students and postdocs in biology, bioinformatics, or health sciences  
+- Researchers new to transcriptomics or RNA-seq  
+- Data science enthusiasts entering computational biology  
+
+No prior experience in R or RNA-seq is required — just a willingness to learn and experiment.
+
+## Can I follow along online if I can’t join live?
+
+Yes! All lecture slides, code notebooks, data sources, and recorded videos will be made freely available via a GitHub repository and Google Drive. You can follow the course material at your own pace.
+
+## What are the benefits of joining the live sessions?
+
+Attending live sessions gives you access to:
+
+- **Interactive Q&A and troubleshooting**  
+- **Live coding walk-throughs with the instructor**  
+- **Exclusive breakout sessions and project discussions**  
+- **Early access to new modules and datasets**  
+- **Opportunities to ask questions about your own data**  
+- Optional **certificates of participation** (upon request)
+
+---
+
+## Will I receive a grade or certificate?
+
+This is a **non-credit, non-graded course**, but participants who complete all modules and submit final assignments may request a **Certificate of Participation**. Priority is given to students attending live.
+
+## Can I bring my own data?
+
+Yes! You are encouraged to bring your own **bulk or single-cell RNA-seq data** to the course. During the later sessions, we’ll discuss how to structure custom projects using what you’ve learned.
+
+## Can I cite this course in my work?
+
+Yes! If you found this course helpful in preparing a manuscript or research project, you are welcome to acknowledge it. Please link to the course GitHub repository and cite the instructor as:
+
+> Hossain MJ. Transcriptomics Data Analysis (TDA): An Open-Access, Hands-On RNA-seq Workshop. 2025. https://github.com/tda 
 
 
 
