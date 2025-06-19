@@ -5,4 +5,4 @@ Transcriptomics Data Analysis (TDA) is a live, instructor-led training program d
 
 Delivered over live Zoom sessions, the course blends concise theoretical discussions with interactive, hands-on coding exercises using real-world ‘omic datasets. The instructional approach encourages active learning and immediate application of concepts.
 
-While the primary focus is on infectious disease, immunology, and One Health research, the analytical frameworks and data interpretation skills taught are broadly applicable to diverse areas of genomics and transcriptomics research.
+While the primary focus is on cancer, neurological disorders, infectious disease, and One Health research, the analytical frameworks and data interpretation skills taught are broadly applicable to diverse areas of genomics and transcriptomics research.
