@@ -148,6 +148,31 @@ Yes! If you found this course helpful in preparing a manuscript or research proj
 | **scVelo** | RNA velocity for dynamic cell state modeling | Python | [scVelo](https://scvelo.readthedocs.io/) |
 | **BiocSingular** | PCA/SVD implementations for large scRNA-seq | R (Bioconductor) | [BiocSingular](https://bioconductor.org/packages/BiocSingular/) |
 
+### Bulk RNA-seq Tools (Python Ecosystem)
+| Tool / Package | Description | Link |
+|----------------|-------------|------|
+| **HTSeq** | Read counting tool for aligned RNA-seq data (BAM/SAM) | [HTSeq](https://htseq.readthedocs.io/) |
+| **featureCounts (via subprocess)** | Often wrapped in Python scripts for counting mapped reads | [featureCounts](http://bioinf.wehi.edu.au/featureCounts/) |
+| **Pandas** | Data manipulation and tabular processing | [Pandas](https://pandas.pydata.org/) |
+| **NumPy** | Numerical computing backend | [NumPy](https://numpy.org/) |
+| **SciPy** | Scientific computing and statistics | [SciPy](https://www.scipy.org/) |
+| **Matplotlib / Seaborn** | Visualization and plotting | [Matplotlib](https://matplotlib.org/) / [Seaborn](https://seaborn.pydata.org/) |
+| **statsmodels** | Statistical modeling (e.g., GLMs for DE analysis) | [statsmodels](https://www.statsmodels.org/) |
+| **BioPython** | Bioinformatics utilities for FASTA/FASTQ/BAM parsing | [BioPython](https://biopython.org/) |
+
+### Single-cell RNA-seq Tools (Python Ecosystem)
+| Tool / Package | Description | Link |
+|----------------|-------------|------|
+| **Scanpy** | Scalable framework for single-cell analysis | [Scanpy](https://scanpy.readthedocs.io/) |
+| **AnnData** | Core data structure for single-cell data | [AnnData](https://anndata.readthedocs.io/) |
+| **scvelo** | RNA velocity analysis for dynamic cell states | [scvelo](https://scvelo.readthedocs.io/) |
+| **CellRank** | Fate mapping using RNA velocity and Markov chains | [CellRank](https://cellrank.org/) |
+| **Squidpy** | Spatial transcriptomics toolkit | [Squidpy](https://squidpy.readthedocs.io/) |
+| **UMAP** | Dimensionality reduction method | [UMAP](https://umap-learn.readthedocs.io/) |
+| **leidenalg** | Clustering via Leiden algorithm | [leidenalg](https://github.com/vtraag/leidenalg) |
+| **Scanorama** | Batch correction and data integration | [Scanorama](https://github.com/brianhie/scanorama) |
+| **Scrublet** | Doublet detection for single-cell data | [Scrublet](https://github.com/AllonKleinLab/scrublet) |
+| **Harmony-Py** | Fast and accurate batch integration | [Harmony-Py](https://github.com/slowkow/harmony-py) |
 
 ## Single Cell Papers with Code
 ### Tutorial
