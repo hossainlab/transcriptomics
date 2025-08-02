@@ -264,24 +264,14 @@ export const TUTORIALS: Tutorial[] = [
         description: "This video is the first part of a series on RNA-Seq analysis with R. Learn how to set up your workflow for RNA-Seq analysis in R.",
         link: "https://youtu.be/tRNGUINrpls?si=Z_lF-Cgq1K7hO6TE"
     },
-    {
-        icon: PipelineIcon,
-        title: "Differential Expression with DESeq2",
-        description: "Learn how to use DESeq2 to identify statistically significant gene expression changes between experimental conditions.",
-        link: "#"
-    },
+    
     {
         icon: PipelineIcon,
         title: "RNA-Seq Analysis with R | Introduction to RNA-Seq",
         description: "Learn how to analyze RNA-Seq data with R in this informative video series. In this video, we'll cover the basics of RNA-Seq analysis and get you started on using R for your research.",
         link: "https://youtu.be/hiDo9JCkdH8?si=-cTp8-M37JfyRylo"
     },
-    {
-        icon: PipelineIcon,
-        title: "Intro to Single-Cell with Seurat",
-        description: "Get started with single-cell analysis. Learn to perform QC, clustering, and cell type annotation using Seurat.",
-        link: "#"
-    },
+    
     {
         icon: PipelineIcon,
         title: "RNA-Seq Analysis with R | Fundamentals of R: Part I ",
