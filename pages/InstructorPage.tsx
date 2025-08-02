@@ -24,14 +24,14 @@ const InstructorPage: React.FC = () => {
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="prose lg:prose-xl max-w-none text-brand-secondary">
-            <h2>About Dr. Finch</h2>
+            <h2>About Md. Jubayer Hossain</h2>
             {INSTRUCTOR_INFO.longBio.split('\n\n').map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
             ))}
             
             <h2>Teaching Philosophy</h2>
             <blockquote className="border-l-4 border-brand-accent pl-6 italic text-brand-secondary">
-                "My goal is to demystify computational biology. I believe that with the right guidance and hands-on practice, any biologist can become proficient in data analysis. This course is designed to be a bridge, empowering you to take control of your data, ask more ambitious questions, and accelerate your research. I focus on building a strong conceptual foundation before diving into the code, ensuring you understand not just 'how' but also 'why'."
+                "My goal is to demystify bioinformatics and computational biology. I believe that with the right guidance and hands-on practice, any biologist can become proficient in data analysis. This course is designed to be a bridge, empowering you to take control of your data, ask more ambitious questions, and accelerate your research. I focus on building a strong conceptual foundation before diving into the code, ensuring you understand not just 'how' but also 'why'."
             </blockquote>
 
             <h2>Selected Publications</h2>
