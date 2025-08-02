@@ -234,7 +234,7 @@ const HomePage: React.FC = () => {
                 <p className="text-lg text-brand-accent font-semibold mt-1 font-sans">{INSTRUCTOR_INFO.position}</p>
                 <p className="mt-4 text-brand-secondary">{INSTRUCTOR_INFO.bio}</p>
                 <Link to="/instructor" className="mt-6 inline-block text-brand-accent font-bold hover:underline font-sans">
-                    Learn more about Dr. Finch &rarr;
+                    Learn more about Md. Jubayer Hossain &rarr;
                 </Link>
              </div>
           </div>
@@ -285,7 +285,7 @@ const HomePage: React.FC = () => {
                   <FeatureListItem>Interactive learning experience</FeatureListItem>
                 </ul>
                 <ul className="space-y-3">
-                  <FeatureListItem>30+ lessons</FeatureListItem>
+                  <FeatureListItem>15+ lessons</FeatureListItem>
                   <FeatureListItem>Certificate of completion</FeatureListItem>
                   <FeatureListItem>Personalized feedback on Discord</FeatureListItem>
                 </ul>
