@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
           <div className="px-5 py-2"><a href="/#pricing" className="text-base text-gray-300 hover:text-white">Pricing</a></div>
         </nav>
         <p className="text-center text-base text-gray-400 font-sans">
-          &copy; {new Date().getFullYear()} Transcriptomics Course. All rights reserved.
+          &copy; {new Date().getFullYear()} Md. Jubayer Hossain. All rights reserved.
         </p>
       </div>
     </footer>
