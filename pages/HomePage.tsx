@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MODULE_DATA, WHAT_YOULL_LEARN, TESTIMONIALS, FAQS, INSTRUCTOR_INFO } from '../constants';
+import { MODULE_DATA, WHAT_YOULL_LEARN, TESTIMONIALS, FAQS, INSTRUCTOR_INFO, TUTORIALS } from '../constants';
 import TestimonialCard from '../components/TestimonialCard';
 import FAQItem from '../components/FAQItem';
 import ShowcaseCharts from '../components/ShowcaseCharts';
@@ -174,9 +174,38 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Featured Tutorials Section */}
+      <section className="py-16 sm:py-24 bg-brand-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-extrabold text-brand-dark sm:text-4xl">Featured Tutorials</h2>
+            <p className="mt-4 text-lg text-brand-secondary max-w-3xl mx-auto">
+              Get a taste of the hands-on lessons included in the course. Watch these key tutorials to jumpstart your learning.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {TUTORIALS.map((tutorial) => (
+              <div key={tutorial.title} className="group bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full">
+                <div className="flex-grow">
+                  <div className="flex justify-center items-center mb-6 h-16 w-16 rounded-full bg-brand-accent/10 mx-auto transition-colors duration-300 group-hover:bg-brand-accent">
+                    <tutorial.icon className="h-8 w-8 text-brand-accent transition-colors duration-300 group-hover:text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold font-sans text-brand-dark mb-3">{tutorial.title}</h3>
+                  <p className="text-brand-secondary leading-relaxed">{tutorial.description}</p>
+                </div>
+                <div className="mt-6">
+                  <a href={tutorial.link} className="bg-brand-secondary text-white font-bold py-2 px-6 rounded-full text-base hover:bg-brand-primary transition-all transform hover:scale-105 shadow-md font-sans">
+                    Watch Tutorial
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 sm:py-24 bg-brand-light">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-brand-dark sm:text-4xl">From Our Students</h2>
@@ -193,19 +222,19 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Instructor Section */}
-       <section className="py-16 sm:py-24 bg-white">
+       <section className="py-16 sm:py-24 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
              <h2 className="text-3xl font-extrabold text-brand-dark sm:text-4xl">Meet Your Instructor</h2>
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 bg-brand-light p-8 md:p-12 rounded-lg shadow-xl border border-gray-200">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 bg-white p-8 md:p-12 rounded-lg shadow-xl border border-gray-200">
              <img src={INSTRUCTOR_INFO.photoUrl} alt={INSTRUCTOR_INFO.name} className="w-48 h-48 rounded-full object-cover flex-shrink-0 border-4 border-brand-accent/50" />
              <div className="text-center md:text-left">
                 <h3 className="text-2xl font-bold text-brand-dark">{INSTRUCTOR_INFO.name}</h3>
                 <p className="text-lg text-brand-accent font-semibold mt-1 font-sans">{INSTRUCTOR_INFO.position}</p>
                 <p className="mt-4 text-brand-secondary">{INSTRUCTOR_INFO.bio}</p>
                 <Link to="/instructor" className="mt-6 inline-block text-brand-accent font-bold hover:underline font-sans">
-                    Learn more about Jubayer &rarr;
+                    Learn more about Dr. Finch &rarr;
                 </Link>
              </div>
           </div>
@@ -222,19 +251,12 @@ const HomePage: React.FC = () => {
             </p>
           </div>
           <div 
-            className="p-8 sm:p-12 md:p-16 rounded-2xl shadow-xl relative overflow-hidden"
-            style={{
-              backgroundColor: '#fefcf7',
-              backgroundImage: `
-                repeating-linear-gradient(45deg, rgba(239, 226, 201, 0.5) 0, rgba(239, 226, 201, 0.5) 1px, transparent 1px, transparent 25px),
-                repeating-linear-gradient(-45deg, rgba(239, 226, 201, 0.5) 0, rgba(239, 226, 201, 0.5) 1px, transparent 1px, transparent 25px)
-              `
-            }}
+            className="p-8 sm:p-12 md:p-16 rounded-2xl shadow-xl relative overflow-hidden bg-white"
           >
             <div className="text-center text-brand-dark">
               <div className="flex justify-center items-baseline gap-2">
-                <p className="text-7xl md:text-8xl font-black font-sans">8000tk</p>
-                <p className="text-2xl md:text-3xl font-semibold text-red-500 line-through font-sans self-center pt-2">10000tk</p>
+                <p className="text-7xl md:text-8xl font-black font-sans">10000 BDT</p>
+                <p className="text-2xl md:text-3xl font-semibold text-red-500 line-through font-sans self-center pt-2">2000</p>
               </div>
               
               <h3 className="text-3xl md:text-4xl font-bold mt-4 font-sans">

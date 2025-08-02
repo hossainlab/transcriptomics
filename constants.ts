@@ -36,6 +36,13 @@ export interface LearningOutcome {
     description: string;
 }
 
+export interface Tutorial {
+  title: string;
+  description: string;
+  icon: React.ElementType;
+  link: string;
+}
+
 export const MODULE_DATA: ModuleCategory[] = [
   {
     category: "Fundamentals Concepts",
@@ -248,3 +255,61 @@ export const INSTRUCTOR_INFO = {
     bio: "Md. Jubayer Hossain is the Founder and CEO of DeepBio Limited and Executive Director of CHIRAL Bangladesh. He holds BSc and MSc degrees in Microbiology from Jagannath University. He teaches AI for Public Health at Daffodil International University and leads bioinformatics and machine learning programs at cBLAST, University of Dhaka. His research focuses on applying AI to health data—including omics and neuroimaging—to discover biomarkers and develop predictive models for cancer and neurological disorders. He also specializes in visualizing complex biological data for clinical interpretation.",
     longBio: "I am the Founder and Chief Executive Officer of DeepBio Limited, and the Founder and Executive Director of CHIRAL Bangladesh. I completed my Master of Science (2020) and Bachelor of Science (2019) in Microbiology from Jagannath University.  As an educator, I hold the position of Lead Instructor and Organizer at the Training Unit of CHIRAL and DeepBio Limited.  Additionally, I currently serve as an Instructor for the Data Science for Biologists and Biomedical Machine Learning with Python programs at cBLAST, University of Dhaka, and as the Program Lead for the GSA Bioinformatics Internship,  a collaborative initiative jointly organized by the Global Network of Bangladeshi Biotechnologists (GNOBB), ASI School of Life, and Society for the Popularization of Science, Bangladesh (SPSB).  Furthermore, I teach the course AI for Public Health (a 2 credit-hour micro-credential program) at Daffodil International University. My research focuses on applying AI to health data—including multi-omics datasets (genomics, transcriptomics, proteomics), and neuroimaging—to identify clinically actionable biomarkers and build predictive models for early diagnosis and treatment of neurological disorders and cancer. I am also interested in visualizing complex data and models to enhance biological interpretation and clinical application."
 }
+
+
+export const TUTORIALS: Tutorial[] = [
+    {
+        icon: PipelineIcon,
+        title: "RNA-Seq Analysis with R | Workflow Setup",
+        description: "This video is the first part of a series on RNA-Seq analysis with R. Learn how to set up your workflow for RNA-Seq analysis in R.",
+        link: "https://youtu.be/tRNGUINrpls?si=Z_lF-Cgq1K7hO6TE"
+    },
+    {
+        icon: PipelineIcon,
+        title: "Differential Expression with DESeq2",
+        description: "Learn how to use DESeq2 to identify statistically significant gene expression changes between experimental conditions.",
+        link: "#"
+    },
+    {
+        icon: PipelineIcon,
+        title: "RNA-Seq Analysis with R | Introduction to RNA-Seq",
+        description: "Learn how to analyze RNA-Seq data with R in this informative video series. In this video, we'll cover the basics of RNA-Seq analysis and get you started on using R for your research.",
+        link: "https://youtu.be/hiDo9JCkdH8?si=-cTp8-M37JfyRylo"
+    },
+    {
+        icon: PipelineIcon,
+        title: "Intro to Single-Cell with Seurat",
+        description: "Get started with single-cell analysis. Learn to perform QC, clustering, and cell type annotation using Seurat.",
+        link: "#"
+    },
+    {
+        icon: PipelineIcon,
+        title: "RNA-Seq Analysis with R | Fundamentals of R: Part I ",
+        description: "This video is perfect for beginners and anyone looking to strengthen their R skills before diving deeper into RNA-Seq analysis. Understanding these fundamentals will help you navigate the more advanced topics in the upcoming videos.",
+        link: "https://youtu.be/WgH-6gDGoyc?si=bHy30Ep6ZdPd88gN"
+    },
+    {
+        icon: PipelineIcon,
+        title: "RNA-Seq Analysis with R | Fundamentals of R: Part II",
+        description: "By the end of this video, you'll be well-equipped to handle the intricacies of RNA-Seq data using R. This foundational knowledge is crucial as we move forward into the more specialized topics in the upcoming videos.",
+        link: "https://youtu.be/Eps9BtmYRBs?si=wlCZF_ApsmunFDAv"
+    }, 
+    {
+        icon: PipelineIcon,
+        title: "RNA-Seq Analysis with R | RNA-Seq Data Manipulation",
+        description: "In this fifth installment of the RNA-Seq Analysis with R series, we dive into RNA-Seq data manipulation techniques using R. You'll learn how to efficiently handle large RNA-Seq datasets, focusing on essential tasks such as filtering, normalizing, and transforming data for downstream analysis.",
+        link: "https://youtu.be/bdWws0gntMI?si=-hfAMWwYoSPF9snT"
+    },
+    {
+        icon: PipelineIcon,
+        title: "RNA-Seq Analysis with R | RNA-Seq Data Visualization",
+        description: "In the sixth video of our RNA-Seq Analysis with R series, we focus on RNA-Seq data visualization techniques. This tutorial covers a range of methods to visually explore and interpret RNA-Seq data, including the creation of heatmaps, PCA plots, and expression level distributions.",
+        link: "https://youtu.be/QuobIs-VI4E?si=pmz_lqqdWVBTqdtN"
+    },
+     {
+        icon: PipelineIcon,
+        title: "RNA-Seq Analysis with R | RNA-Seq Pipeline from Scratch: Step-by-Step Guide",
+        description: "Learn how to analyze RNA-Seq data with R in this step-by-step guide. Follow along as we build an RNA-Seq pipeline from scratch!",
+        link: "https://youtu.be/8tQ0vnXnAIc?si=Ku7EzLe8dE6ZSsl-"
+    }
+];
