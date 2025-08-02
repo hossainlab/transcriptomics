@@ -52,7 +52,7 @@ export const MODULE_DATA: ModuleCategory[] = [
         title: "Setting up Your Environment", 
         description: "Prepare your ##computational environment## for bioinformatics. We'll guide you through installing essential tools like ##Conda## and setting up the required software packages for the course.",
         concepts: ['conda', 'bash', 'environment', 'packages', 'CLI'],
-        imageUrls: ['assets/images/m2-1.jpg', 'assets/images/m2-2.jpg', 'assets/images/m2-3.jpg'],
+        imageUrls: ['https://www.linuxfoundation.org/hubfs/Tux-flat-version.png', 'https://www.linuxfoundation.org/hubfs/Tux-flat-version.png', 'https://www.linuxfoundation.org/hubfs/Tux-flat-version.png'],
       },
       { 
         id: "M3", 
