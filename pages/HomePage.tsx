@@ -205,7 +205,7 @@ const HomePage: React.FC = () => {
                 <p className="text-lg text-brand-accent font-semibold mt-1 font-sans">{INSTRUCTOR_INFO.position}</p>
                 <p className="mt-4 text-brand-secondary">{INSTRUCTOR_INFO.bio}</p>
                 <Link to="/instructor" className="mt-6 inline-block text-brand-accent font-bold hover:underline font-sans">
-                    Learn more about Dr. Finch &rarr;
+                    Learn more about Jubayer &rarr;
                 </Link>
              </div>
           </div>
