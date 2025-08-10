@@ -3,7 +3,7 @@ import React from 'react';
 import { ArrowRightIcon } from '../components/IconComponents';
 
 const PipelineStep = ({ title, description, tools }: { title: string; description: string; tools?: string }) => (
-    <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 w-full max-w-sm mx-auto md:w-64 text-center flex-shrink-0">
+    <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 w-full max-w-xs sm:max-w-sm mx-auto md:w-64 text-center flex-shrink-0">
       <h4 className="font-bold font-sans text-brand-primary">{title}</h4>
       <p className="text-sm text-brand-secondary mt-1 min-h-[3.5rem] flex items-center justify-center px-2">{description}</p>
       {tools && <p className="text-xs text-gray-500 mt-2 font-mono bg-gray-100 p-1 rounded">Tools: {tools}</p>}
@@ -11,8 +11,8 @@ const PipelineStep = ({ title, description, tools }: { title: string; descriptio
 );
   
 const PipelineArrow = () => (
-    <div className="flex-shrink-0 flex items-center justify-center h-12 w-full md:h-auto md:w-16 md:mx-2">
-        <ArrowRightIcon className="w-8 h-8 text-gray-300 transform rotate-90 md:transform-none" />
+    <div className="flex-shrink-0 flex items-center justify-center h-8 w-full md:h-auto md:w-16 md:mx-2">
+        <ArrowRightIcon className="w-6 h-6 sm:w-8 sm:h-8 text-gray-300 transform rotate-90 md:transform-none" />
     </div>
 );
 

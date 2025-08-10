@@ -8,7 +8,7 @@ import {
 const ChartContainer = ({ title, children }: { title: string, children: React.ReactNode }) => (
   <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg border border-gray-100 flex flex-col">
     <h4 className="text-xl font-semibold text-center mb-4 text-brand-dark">{title}</h4>
-    <div className="w-full flex-grow" style={{ minHeight: '350px' }}>
+    <div className="w-full flex-grow h-80 sm:h-96">
         {children}
     </div>
   </div>

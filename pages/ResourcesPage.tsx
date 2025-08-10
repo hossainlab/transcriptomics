@@ -42,11 +42,11 @@ const ResourceTable = ({ headers, data }: { headers: string[], data: (string | J
 );
 
 const PaperEntry = ({ codeLink, codeLang, citation }: { codeLink?: string, codeLang?: string, citation: string | JSX.Element }) => (
-    <div className="bg-brand-light p-4 rounded-lg border border-gray-200 mb-4">
-        <div className="text-brand-secondary">{citation}</div>
+    <div className="bg-brand-light p-4 rounded-lg border border-gray-200 mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+        <div className="text-brand-secondary mb-2 sm:mb-0 sm:mr-4">{citation}</div>
         {(codeLink || codeLang) && (
             <A href={codeLink || '#'} >
-                <span className="mt-2 inline-block text-sm">
+                <span className="text-sm flex-shrink-0">
                     [code {codeLang && `| ${codeLang}`}] &rarr;
                 </span>
             </A>

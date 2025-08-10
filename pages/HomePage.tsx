@@ -98,19 +98,18 @@ const HomePage: React.FC = () => {
               <h3 className="text-2xl lg:text-3xl font-bold text-brand-primary mb-12 border-l-4 border-brand-accent pl-4">{category.category}</h3>
               <div className="space-y-20 lg:space-y-28">
                 {category.modules.map((module, index) => (
-                  <div key={module.id} className="group grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+                  <div key={module.id} className="group flex flex-col md:flex-row gap-8 md:gap-16 items-center">
                     
                     {/* Image Collage */}
-                    <div className={`relative h-80 w-full max-w-md mx-auto ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
+                    <div className={`relative h-64 sm:h-80 w-full max-w-md mx-auto my-8 md:my-0 ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
                         <div 
                             className="absolute top-0 left-0 w-3/4 h-3/4 bg-white p-2 rounded-lg shadow-lg transform -rotate-6 transition-all duration-500 ease-in-out group-hover:rotate-0 group-hover:scale-105"
-                            style={{ 
+                            style={{
                                 backgroundImage: `url(${module.imageUrls[0]})`, 
                                 backgroundSize: 'cover', 
                                 backgroundPosition: 'center',
-                                filter: 'grayscale(100%)'
                             }}
-                        ></div>
+                        </div>
                         <div 
                             className="absolute bottom-0 right-0 w-5/6 h-5/6 bg-white p-2 rounded-lg shadow-xl transform rotate-3 transition-all duration-500 ease-in-out group-hover:rotate-0 group-hover:scale-105 z-10"
                             style={{ 
@@ -118,9 +117,16 @@ const HomePage: React.FC = () => {
                                 backgroundSize: 'cover', 
                                 backgroundPosition: 'center'
                             }}
-                        ></div>
+                        </div>
                          <div 
                             className="absolute -bottom-4 -left-4 w-1/2 h-1/2 bg-white p-2 rounded-lg shadow-2xl transform rotate-12 transition-all duration-500 ease-in-out group-hover:rotate-0 group-hover:scale-105"
+                            style={{ 
+                                backgroundImage: `url(${module.imageUrls[2]})`, 
+                                backgroundSize: 'cover', 
+                                backgroundPosition: 'center',
+                                filter: 'grayscale(100%)'
+                            }}
+                        </div>
                             style={{ 
                                 backgroundImage: `url(${module.imageUrls[2]})`, 
                                 backgroundSize: 'cover', 

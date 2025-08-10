@@ -27,17 +27,17 @@ const DataPage: React.FC = () => {
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
                         <tr>
-                            <td className="px-6 py-4 whitespace-nowrap font-semibold">Human Brain Bulk RNA-Seq</td>
+                            <td className="px-6 py-4 font-semibold">Human Brain Bulk RNA-Seq</td>
                             <td className="px-6 py-4">A foundational dataset for learning bulk RNA-seq analysis pipelines. Used in Modules 5, 7, 8, 9.</td>
                             <td className="px-6 py-4 whitespace-nowrap"><a href="#" className="text-brand-accent hover:underline font-sans font-semibold">Link (Coming Soon)</a></td>
                         </tr>
                          <tr>
-                            <td className="px-6 py-4 whitespace-nowrap font-semibold">10X PBMC Single-Cell</td>
+                            <td className="px-6 py-4 font-semibold">10X PBMC Single-Cell</td>
                             <td className="px-6 py-4">A public 10X Genomics dataset of peripheral blood mononuclear cells. Used in Modules 6, 10-13.</td>
                             <td className="px-6 py-4 whitespace-nowrap"><a href="#" className="text-brand-accent hover:underline font-sans font-semibold">Link (Coming Soon)</a></td>
                         </tr>
                          <tr>
-                            <td className="px-6 py-4 whitespace-nowrap font-semibold">Mouse Brain Spatial</td>
+                            <td className="px-6 py-4 font-semibold">Mouse Brain Spatial</td>
                             <td className="px-6 py-4">A Visium spatial transcriptomics dataset of the mouse brain. Used in Module 14.</td>
                             <td className="px-6 py-4 whitespace-nowrap"><a href="#" className="text-brand-accent hover:underline font-sans font-semibold">Link (Coming Soon)</a></td>
                         </tr>
