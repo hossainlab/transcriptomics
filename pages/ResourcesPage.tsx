@@ -1,8 +1,343 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { ArrowRightIcon, DatabaseIcon, CodeIcon, BookOpenIcon, TerminalIcon, ChartBarIcon } from '../components/IconComponents';
+
+interface Resource {
+  id: string;
+  name: string;
+  description: string;
+  url: string;
+  category: 'data' | 'tools' | 'tutorials' | 'references';
+  subcategory: 'bulk' | 'single-cell' | 'both';
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  type: 'database' | 'software' | 'tutorial' | 'paper' | 'documentation';
+  tags: string[];
+  icon: React.ElementType;
+}
 
 const A = ({ href, children }: { href: string, children: React.ReactNode }) => (
     <a href={href} className="text-brand-accent hover:underline font-sans font-semibold" target="_blank" rel="noopener noreferrer">{children}</a>
+);
+
+const resources: Resource[] = [
+  // Data Sources - Bulk RNA-seq
+  {
+    id: 'geo',
+    name: 'Gene Expression Omnibus (GEO)',
+    description: 'NIH repository for functional genomics data with over 100,000 bulk RNA-seq studies',
+    url: 'https://www.ncbi.nlm.nih.gov/geo/',
+    category: 'data',
+    subcategory: 'both',
+    difficulty: 'beginner',
+    type: 'database',
+    tags: ['public', 'large-scale', 'metadata'],
+    icon: DatabaseIcon
+  },
+  {
+    id: 'gtex',
+    name: 'Genotype-Tissue Expression (GTEx)',
+    description: 'Comprehensive atlas of gene expression across 54 human tissues from 838 individuals',
+    url: 'https://gtexportal.org/home/',
+    category: 'data',
+    subcategory: 'bulk',
+    difficulty: 'beginner',
+    type: 'database',
+    tags: ['human', 'tissue-specific', 'eQTL'],
+    icon: DatabaseIcon
+  },
+  {
+    id: 'tcga',
+    name: 'The Cancer Genome Atlas (TCGA)',
+    description: 'Multi-omics data from 33 cancer types including RNA-seq from tumor and normal samples',
+    url: 'https://portal.gdc.cancer.gov/',
+    category: 'data',
+    subcategory: 'bulk',
+    difficulty: 'intermediate',
+    type: 'database',
+    tags: ['cancer', 'clinical', 'multi-omics'],
+    icon: DatabaseIcon
+  },
+  {
+    id: 'recount3',
+    name: 'recount3',
+    description: 'Over 750,000 human and mouse RNA-seq samples uniformly processed and ready for analysis',
+    url: 'https://jhubiostatistics.shinyapps.io/recount3/',
+    category: 'data',
+    subcategory: 'bulk',
+    difficulty: 'beginner',
+    type: 'database',
+    tags: ['processed', 'normalized', 'R-package'],
+    icon: DatabaseIcon
+  },
+
+  // Data Sources - Single-cell RNA-seq
+  {
+    id: 'hca',
+    name: 'Human Cell Atlas',
+    description: 'Comprehensive reference of human cell types with high-quality annotated single-cell datasets',
+    url: 'https://data.humancellatlas.org/',
+    category: 'data',
+    subcategory: 'single-cell',
+    difficulty: 'beginner',
+    type: 'database',
+    tags: ['human', 'cell-atlas', 'well-annotated'],
+    icon: DatabaseIcon
+  },
+  {
+    id: 'tabula-muris',
+    name: 'Tabula Muris',
+    description: 'Single-cell atlas of mouse organs with 100,000+ cells from 20 tissues',
+    url: 'https://tabula-muris.ds.czbiohub.org/',
+    category: 'data',
+    subcategory: 'single-cell',
+    difficulty: 'beginner',
+    type: 'database',
+    tags: ['mouse', 'multi-tissue', 'reference'],
+    icon: DatabaseIcon
+  },
+  {
+    id: 'tabula-sapiens',
+    name: 'Tabula Sapiens',
+    description: 'Human single-cell transcriptomic atlas with 500,000+ cells across 24 tissues',
+    url: 'https://tabula-sapiens-portal.ds.czbiohub.org/',
+    category: 'data',
+    subcategory: 'single-cell',
+    difficulty: 'beginner',
+    type: 'database',
+    tags: ['human', 'multi-tissue', 'comprehensive'],
+    icon: DatabaseIcon
+  },
+
+  // Analysis Tools - Bulk RNA-seq
+  {
+    id: 'deseq2',
+    name: 'DESeq2',
+    description: 'Gold standard for differential gene expression analysis in bulk RNA-seq data',
+    url: 'https://bioconductor.org/packages/DESeq2/',
+    category: 'tools',
+    subcategory: 'bulk',
+    difficulty: 'beginner',
+    type: 'software',
+    tags: ['R', 'bioconductor', 'differential-expression'],
+    icon: CodeIcon
+  },
+  {
+    id: 'star',
+    name: 'STAR Aligner',
+    description: 'Ultrafast universal RNA-seq aligner with splice-aware mapping capabilities',
+    url: 'https://github.com/alexdobin/STAR',
+    category: 'tools',
+    subcategory: 'both',
+    difficulty: 'intermediate',
+    type: 'software',
+    tags: ['alignment', 'command-line', 'splice-aware'],
+    icon: TerminalIcon
+  },
+  {
+    id: 'salmon',
+    name: 'Salmon',
+    description: 'Fast and bias-aware transcript quantification without alignment',
+    url: 'https://salmon.readthedocs.io/',
+    category: 'tools',
+    subcategory: 'bulk',
+    difficulty: 'intermediate',
+    type: 'software',
+    tags: ['quantification', 'pseudo-alignment', 'fast'],
+    icon: ChartBarIcon
+  },
+
+  // Analysis Tools - Single-cell RNA-seq
+  {
+    id: 'seurat',
+    name: 'Seurat',
+    description: 'Comprehensive toolkit for single-cell genomics analysis and visualization',
+    url: 'https://satijalab.org/seurat/',
+    category: 'tools',
+    subcategory: 'single-cell',
+    difficulty: 'beginner',
+    type: 'software',
+    tags: ['R', 'clustering', 'integration', 'visualization'],
+    icon: CodeIcon
+  },
+  {
+    id: 'scanpy',
+    name: 'Scanpy',
+    description: 'Scalable toolkit for analyzing single-cell gene expression data',
+    url: 'https://scanpy.readthedocs.io/',
+    category: 'tools',
+    subcategory: 'single-cell',
+    difficulty: 'intermediate',
+    type: 'software',
+    tags: ['python', 'scalable', 'trajectory-inference'],
+    icon: CodeIcon
+  },
+  {
+    id: 'cellranger',
+    name: '10x Cell Ranger',
+    description: 'Pipeline for processing Chromium single-cell RNA-seq data',
+    url: 'https://support.10xgenomics.com/single-cell-gene-expression/software/',
+    category: 'tools',
+    subcategory: 'single-cell',
+    difficulty: 'beginner',
+    type: 'software',
+    tags: ['10x-genomics', 'preprocessing', 'commercial'],
+    icon: TerminalIcon
+  },
+
+  // Tutorials and Learning Resources
+  {
+    id: 'bioconductor-workflows',
+    name: 'Bioconductor Workflows',
+    description: 'Step-by-step tutorials for RNA-seq analysis using R/Bioconductor packages',
+    url: 'https://www.bioconductor.org/help/workflows/',
+    category: 'tutorials',
+    subcategory: 'both',
+    difficulty: 'beginner',
+    type: 'tutorial',
+    tags: ['R', 'step-by-step', 'comprehensive'],
+    icon: BookOpenIcon
+  },
+  {
+    id: 'sctutorial',
+    name: 'Single-cell Best Practices',
+    description: 'Comprehensive tutorial on current best practices in single-cell RNA-seq analysis',
+    url: 'https://github.com/theislab/single-cell-tutorial',
+    category: 'tutorials',
+    subcategory: 'single-cell',
+    difficulty: 'intermediate',
+    type: 'tutorial',
+    tags: ['python', 'scanpy', 'best-practices'],
+    icon: BookOpenIcon
+  },
+  {
+    id: 'orchestrating-scrna',
+    name: 'Orchestrating Single-Cell Analysis',
+    description: 'Online book covering single-cell RNA-seq analysis with R/Bioconductor',
+    url: 'http://bioconductor.org/books/release/OSCA/',
+    category: 'tutorials',
+    subcategory: 'single-cell',
+    difficulty: 'beginner',
+    type: 'documentation',
+    tags: ['R', 'bioconductor', 'comprehensive', 'book'],
+    icon: BookOpenIcon
+  }
+];
+
+const ResourceCard: React.FC<{ resource: Resource; isActive: boolean; onClick: () => void }> = ({ resource, isActive, onClick }) => {
+  const difficultyColors = {
+    beginner: 'bg-green-100 text-green-700 border-green-300',
+    intermediate: 'bg-yellow-100 text-yellow-700 border-yellow-300',
+    advanced: 'bg-red-100 text-red-700 border-red-300'
+  };
+
+  const categoryColors = {
+    data: 'border-blue-200 bg-blue-50',
+    tools: 'border-purple-200 bg-purple-50',
+    tutorials: 'border-green-200 bg-green-50',
+    references: 'border-orange-200 bg-orange-50'
+  };
+
+  return (
+    <div
+      onClick={onClick}
+      className={`cursor-pointer transition-all duration-300 rounded-xl border-2 p-6 hover:shadow-lg hover:scale-102 ${
+        isActive
+          ? 'border-brand-accent shadow-lg scale-105'
+          : `${categoryColors[resource.category]} hover:border-brand-accent/50`
+      }`}
+    >
+      <div className="flex items-start gap-4 mb-4">
+        <div className={`p-3 rounded-lg ${isActive ? 'bg-brand-accent text-white' : 'bg-white/70'}`}>
+          <resource.icon className="w-6 h-6" />
+        </div>
+        <div className="flex-1">
+          <div className="flex items-center gap-2 mb-2">
+            <span className={`px-2 py-1 text-xs font-semibold rounded-full border ${difficultyColors[resource.difficulty]}`}>
+              {resource.difficulty}
+            </span>
+            <span className="text-xs bg-white/80 px-2 py-1 rounded-full font-mono">
+              {resource.subcategory}
+            </span>
+          </div>
+          <h3 className="text-lg font-bold text-brand-dark mb-2">{resource.name}</h3>
+          <p className="text-sm text-brand-secondary leading-relaxed">{resource.description}</p>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-1 mt-4">
+        {resource.tags.slice(0, 3).map((tag) => (
+          <span key={tag} className="bg-white/60 text-brand-secondary px-2 py-1 rounded-full text-xs">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const ResourceDetails: React.FC<{ resource: Resource }> = ({ resource }) => (
+  <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+    <div className="flex items-center gap-4 mb-6">
+      <div className="p-4 rounded-xl bg-brand-accent text-white">
+        <resource.icon className="w-8 h-8" />
+      </div>
+      <div className="flex-1">
+        <h2 className="text-2xl font-bold text-brand-dark mb-2">{resource.name}</h2>
+        <p className="text-brand-secondary">{resource.description}</p>
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+      <div>
+        <h3 className="text-lg font-bold text-brand-dark mb-4">Resource Details</h3>
+        <div className="space-y-3">
+          <div className="flex items-center gap-3">
+            <span className="font-semibold text-brand-secondary min-w-[100px]">Category:</span>
+            <span className="text-brand-dark capitalize">{resource.category}</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="font-semibold text-brand-secondary min-w-[100px]">Type:</span>
+            <span className="text-brand-dark capitalize">{resource.type}</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="font-semibold text-brand-secondary min-w-[100px]">Scope:</span>
+            <span className="text-brand-dark capitalize">{resource.subcategory} RNA-seq</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="font-semibold text-brand-secondary min-w-[100px]">Difficulty:</span>
+            <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+              resource.difficulty === 'beginner' ? 'bg-green-100 text-green-700' :
+              resource.difficulty === 'intermediate' ? 'bg-yellow-100 text-yellow-700' :
+              'bg-red-100 text-red-700'
+            }`}>
+              {resource.difficulty}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 className="text-lg font-bold text-brand-dark mb-4">Tags</h3>
+        <div className="flex flex-wrap gap-2">
+          {resource.tags.map((tag) => (
+            <span key={tag} className="bg-brand-light text-brand-dark px-3 py-2 rounded-full text-sm border">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div className="mt-6">
+      <a
+        href={resource.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center bg-brand-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all"
+      >
+        <span>Access Resource</span>
+        <ArrowRightIcon className="ml-2 w-4 h-4" />
+      </a>
+    </div>
+  </div>
 );
 
 const SectionHeader = ({ title, subtext }: { title: string; subtext?: string }) => (
@@ -169,44 +504,222 @@ const papersWithCode = [
 ];
 
 const ResourcesPage: React.FC = () => {
-    return (
-        <div className="bg-white min-h-screen">
-            <header className="bg-brand-light border-b border-gray-200 py-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 className="text-4xl font-extrabold text-brand-primary">Resources</h1>
-                    <p className="mt-4 text-xl text-brand-secondary">A curated collection of data sources, tools, and papers for transcriptomic analysis.</p>
-                </div>
-            </header>
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <SectionHeader title="Data Sources" />
-                <SubSectionHeader title="Bulk RNA-seq" />
-                <ResourceTable headers={bulkRnaSeqDataSources.headers} data={bulkRnaSeqDataSources.rows} />
-                <SubSectionHeader title="Single-cell RNA-seq" />
-                <ResourceTable headers={singleCellRnaSeqDataSources.headers} data={singleCellRnaSeqDataSources.rows} />
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string>('both');
+  const [selectedResource, setSelectedResource] = useState<Resource | null>(resources[0]);
+  const [searchTerm, setSearchTerm] = useState('');
 
-                <SectionHeader title="Analysis Tools & Packages" />
-                <SubSectionHeader title="Bulk RNA-seq" />
-                <p className="text-brand-secondary mb-4">A mix of standalone tools and packages primarily from the R/Bioconductor ecosystem.</p>
-                <ResourceTable headers={bulkRnaSeqToolsR.headers} data={bulkRnaSeqToolsR.rows} />
-                <p className="text-brand-secondary mt-8 mb-4">Core packages from the Python ecosystem for data handling and analysis.</p>
-                <ResourceTable headers={bulkRnaSeqToolsPython.headers} data={bulkRnaSeqToolsPython.rows} />
+  const filteredResources = resources.filter(resource => {
+    const matchesCategory = selectedCategory === 'all' || resource.category === selectedCategory;
+    const matchesSubcategory = selectedSubcategory === 'both' || resource.subcategory === selectedSubcategory || resource.subcategory === 'both';
+    const matchesSearch = resource.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         resource.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    return matchesCategory && matchesSubcategory && matchesSearch;
+  });
 
-                <SubSectionHeader title="Single-cell RNA-seq" />
-                <p className="text-brand-secondary mb-4">Core packages from the R/Bioconductor ecosystem.</p>
-                <ResourceTable headers={singleCellRnaSeqToolsR.headers} data={singleCellRnaSeqToolsR.rows} />
-                <p className="text-brand-secondary mt-8 mb-4">Core packages from the Python ecosystem, centered around Scanpy.</p>
-                <ResourceTable headers={singleCellRnaSeqToolsPython.headers} data={singleCellRnaSeqToolsPython.rows} />
-                
-                <SectionHeader title="Single Cell Papers with Code" />
-                {papersWithCode.map(categoryData => (
-                    <div key={categoryData.category} className="mb-8">
-                        <h3 className="text-xl font-semibold text-brand-dark mb-4">{categoryData.category}</h3>
-                        {categoryData.papers.map((paper, index) => <PaperEntry key={index} {...paper} />)}
-                    </div>
-                ))}
-            </main>
+  const categories = [
+    { key: 'all', label: 'All Resources', count: resources.length },
+    { key: 'data', label: 'Data Sources', count: resources.filter(r => r.category === 'data').length },
+    { key: 'tools', label: 'Analysis Tools', count: resources.filter(r => r.category === 'tools').length },
+    { key: 'tutorials', label: 'Tutorials', count: resources.filter(r => r.category === 'tutorials').length }
+  ];
+
+  const subcategories = [
+    { key: 'both', label: 'All Types' },
+    { key: 'bulk', label: 'Bulk RNA-seq' },
+    { key: 'single-cell', label: 'Single-Cell' }
+  ];
+
+  return (
+    <div className="bg-gradient-to-br from-gray-50 to-brand-light/30 min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-brand-primary to-brand-secondary text-white py-20">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
+            Learning Resources
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-gray-200">
+            Essential data sources, analysis tools, and tutorials to accelerate your transcriptomics research. 
+            Curated for students at every level.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://forms.gle/sK7qXPHmSDwoq1738"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-brand-accent text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg"
+            >
+              Master These Tools
+            </a>
+            <a
+              href="#resources"
+              className="border-2 border-white text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-white hover:text-brand-primary transition-all"
+            >
+              Explore Resources
+            </a>
+          </div>
         </div>
-    );
+      </section>
+
+      {/* Resource Stats */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-brand-dark mb-4">Comprehensive Resource Library</h2>
+            <p className="text-lg text-brand-secondary max-w-3xl mx-auto">
+              Hand-picked resources used in cutting-edge research labs and taught in our course modules
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200">
+              <DatabaseIcon className="w-12 h-12 text-blue-600 mx-auto mb-3" />
+              <div className="text-3xl font-bold text-blue-600 mb-2">{resources.filter(r => r.category === 'data').length}</div>
+              <p className="text-brand-secondary">Data Sources</p>
+            </div>
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200">
+              <CodeIcon className="w-12 h-12 text-purple-600 mx-auto mb-3" />
+              <div className="text-3xl font-bold text-purple-600 mb-2">{resources.filter(r => r.category === 'tools').length}</div>
+              <p className="text-brand-secondary">Analysis Tools</p>
+            </div>
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border border-green-200">
+              <BookOpenIcon className="w-12 h-12 text-green-600 mx-auto mb-3" />
+              <div className="text-3xl font-bold text-green-600 mb-2">{resources.filter(r => r.category === 'tutorials').length}</div>
+              <p className="text-brand-secondary">Learning Materials</p>
+            </div>
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200">
+              <div className="text-3xl font-bold text-orange-600 mb-2">15</div>
+              <p className="text-brand-secondary">Course modules supported</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resource Explorer */}
+      <section id="resources" className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-brand-dark mb-4">Resource Explorer</h2>
+            <p className="text-lg text-brand-secondary max-w-3xl mx-auto mb-8">
+              Search, filter, and discover the perfect resources for your transcriptomics projects
+            </p>
+          </div>
+
+          {/* Search and Filters */}
+          <div className="mb-8">
+            <div className="max-w-2xl mx-auto mb-6">
+              <input
+                type="text"
+                placeholder="Search resources by name, description, or tags..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-brand-accent focus:outline-none text-lg"
+              />
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
+              {categories.map(({ key, label, count }) => (
+                <button
+                  key={key}
+                  onClick={() => setSelectedCategory(key)}
+                  className={`px-4 py-2 rounded-full font-semibold transition-all ${
+                    selectedCategory === key
+                      ? 'bg-brand-accent text-white shadow-lg'
+                      : 'bg-white text-brand-secondary hover:text-brand-dark border-2 border-gray-200 hover:border-brand-accent'
+                  }`}
+                >
+                  {label} ({count})
+                </button>
+              ))}
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-2">
+              {subcategories.map(({ key, label }) => (
+                <button
+                  key={key}
+                  onClick={() => setSelectedSubcategory(key)}
+                  className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                    selectedSubcategory === key
+                      ? 'bg-brand-secondary text-white'
+                      : 'bg-gray-100 text-brand-secondary hover:bg-gray-200'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Resource Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            {filteredResources.length === 0 ? (
+              <div className="col-span-2 text-center py-12">
+                <p className="text-xl text-brand-secondary">No resources found matching your criteria.</p>
+                <p className="text-brand-secondary mt-2">Try different keywords or category filters.</p>
+              </div>
+            ) : (
+              filteredResources.map((resource) => (
+                <ResourceCard
+                  key={resource.id}
+                  resource={resource}
+                  isActive={selectedResource?.id === resource.id}
+                  onClick={() => setSelectedResource(resource)}
+                />
+              ))
+            )}
+          </div>
+
+          {/* Selected Resource Details */}
+          {selectedResource && <ResourceDetails resource={selectedResource} />}
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 bg-gradient-to-r from-brand-accent/10 to-brand-primary/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-brand-dark mb-6">Ready to Use These Resources?</h2>
+          <p className="text-lg text-brand-secondary mb-8 max-w-3xl mx-auto">
+            Don't just browse resources—learn to use them effectively! Our course provides hands-on training 
+            with these essential tools and databases.
+          </p>
+          
+          <div className="bg-white rounded-xl p-8 shadow-lg border-2 border-brand-accent">
+            <h3 className="text-xl font-bold text-brand-dark mb-4">What You'll Learn</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="text-left">
+                <h4 className="font-semibold text-brand-dark mb-2">Data Access & Management:</h4>
+                <ul className="text-sm text-brand-secondary space-y-1">
+                  <li>• Download and process GEO/TCGA datasets</li>
+                  <li>• Navigate HCA and single-cell atlases</li>
+                  <li>• Quality control and preprocessing workflows</li>
+                </ul>
+              </div>
+              <div className="text-left">
+                <h4 className="font-semibold text-brand-dark mb-2">Tool Mastery:</h4>
+                <ul className="text-sm text-brand-secondary space-y-1">
+                  <li>• DESeq2 for differential expression</li>
+                  <li>• Seurat for single-cell analysis</li>
+                  <li>• Integration of multiple analysis tools</li>
+                </ul>
+              </div>
+            </div>
+            
+            <a
+              href="https://forms.gle/sK7qXPHmSDwoq1738"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-gradient-to-r from-brand-accent to-brand-primary text-white font-bold py-4 px-8 rounded-full text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 transform group"
+            >
+              <span>Start Learning With These Resources</span>
+              <ArrowRightIcon className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default ResourcesPage;

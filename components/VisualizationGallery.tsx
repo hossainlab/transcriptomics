@@ -15,7 +15,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'volcano-plot',
     title: 'Volcano Plot',
     description: 'Visualize differential gene expression with statistical significance',
-    imagePath: '/resources/bulkRNAseq/README_files/figure-markdown_github/volcano_plot-1.png',
+    imagePath: '/images/bulk/volcano_plot-1.png',
     category: 'bulk',
     type: 'Differential Expression'
   },
@@ -23,7 +23,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'ma-plot',
     title: 'MA Plot',
     description: 'Display log-fold changes vs mean expression levels',
-    imagePath: '/resources/bulkRNAseq/README_files/figure-markdown_github/ma_plot-1.png',
+    imagePath: '/images/bulk/ma_plot-1.png',
     category: 'bulk',
     type: 'Differential Expression'
   },
@@ -31,7 +31,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'heatmap-bulk',
     title: 'Expression Heatmap',
     description: 'Show hierarchical clustering and expression patterns',
-    imagePath: '/resources/bulkRNAseq/README_files/figure-markdown_github/heatmap_plot-1.png',
+    imagePath: '/images/bulk/heatmap_plot-1.png',
     category: 'bulk',
     type: 'Clustering'
   },
@@ -39,7 +39,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'pca-bulk',
     title: 'PCA Plot',
     description: 'Principal component analysis for sample relationships',
-    imagePath: '/resources/bulkRNAseq/README_files/figure-markdown_github/pca_plot-1.png',
+    imagePath: '/images/bulk/pca_plot-1.png',
     category: 'bulk',
     type: 'Dimensionality Reduction'
   },
@@ -47,7 +47,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'go-enrichment',
     title: 'GO Enrichment',
     description: 'Gene Ontology functional enrichment analysis',
-    imagePath: '/resources/bulkRNAseq/README_files/figure-markdown_github/go_enrich-1.png',
+    imagePath: '/images/bulk/go_enrich-1.png',
     category: 'bulk',
     type: 'Functional Analysis'
   },
@@ -55,7 +55,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'kegg-pathway',
     title: 'KEGG Pathways',
     description: 'Pathway enrichment and biological processes',
-    imagePath: '/resources/bulkRNAseq/README_files/figure-markdown_github/kegg_enrich-1.png',
+    imagePath: '/images/bulk/kegg_enrich-1.png',
     category: 'bulk',
     type: 'Functional Analysis'
   },
@@ -65,7 +65,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'umap-clusters',
     title: 'UMAP Clustering',
     description: 'Cell clustering and dimensionality reduction visualization',
-    imagePath: '/resources/scRNAseq/images/tsne_umap_cluster.png',
+    imagePath: '/images/single-cell/tsne_umap_cluster.png',
     category: 'single-cell',
     type: 'Clustering'
   },
@@ -73,7 +73,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'feature-plots',
     title: 'Feature Plots',
     description: 'Gene expression overlaid on UMAP coordinates',
-    imagePath: '/resources/scRNAseq/images/featureplot_vlnplot_examples.png',
+    imagePath: '/images/single-cell/featureplot_vlnplot_examples.png',
     category: 'single-cell',
     type: 'Gene Expression'
   },
@@ -81,7 +81,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'violin-plots',
     title: 'Violin Plots',
     description: 'Quality control metrics and gene expression distributions',
-    imagePath: '/resources/scRNAseq/images/vlnplot_QC.png',
+    imagePath: '/images/single-cell/vlnplot_QC.png',
     category: 'single-cell',
     type: 'Quality Control'
   },
@@ -89,7 +89,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'heatmap-markers',
     title: 'Marker Gene Heatmap',
     description: 'Top marker genes for each cell cluster',
-    imagePath: '/resources/scRNAseq/images/heatmap_clmarkers.png',
+    imagePath: '/images/single-cell/heatmap_clmarkers.png',
     category: 'single-cell',
     type: 'Marker Analysis'
   },
@@ -97,7 +97,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'integration',
     title: 'Dataset Integration',
     description: 'Batch correction and dataset integration using Seurat',
-    imagePath: '/resources/scRNAseq/images/umap_seurat_datasets.png',
+    imagePath: '/images/single-cell/umap_seurat_datasets.png',
     category: 'single-cell',
     type: 'Integration'
   },
@@ -105,7 +105,7 @@ const VISUALIZATION_DATA: VisualizationItem[] = [
     id: 'trajectory',
     title: 'Trajectory Analysis',
     description: 'Pseudotime and developmental trajectories',
-    imagePath: '/resources/scRNAseq/images/scvelo_DS1_scvelo_stream.png',
+    imagePath: '/images/single-cell/scvelo_DS1_scvelo_stream.png',
     category: 'single-cell',
     type: 'Trajectory'
   }
@@ -158,15 +158,19 @@ const VisualizationGallery: React.FC = () => {
                 src={item.imagePath}
                 alt={item.title}
                 className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                loading="lazy"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
                   const parent = target.parentElement;
                   if (parent) {
-                    parent.innerHTML = `<div class="flex items-center justify-center h-48 text-gray-400">
-                      <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                      </svg>
+                    parent.innerHTML = `<div class="flex items-center justify-center h-48 bg-gray-100 text-gray-500 rounded-lg">
+                      <div class="text-center">
+                        <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <p class="text-sm">Chart Preview<br>Coming Soon</p>
+                      </div>
                     </div>`;
                   }
                 }}
@@ -218,6 +222,11 @@ const VisualizationGallery: React.FC = () => {
                 src={selectedImage.imagePath}
                 alt={selectedImage.title}
                 className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik02MCA4MEwxMDAuNTg2IDEyMC41ODZDMTA0LjM5MyAxMjQuMzkzIDEwNy42MDcgMTI0LjM5MyAxMTEuNDE0IDEyMC41ODZMMTU2IDc2TTEyMCA2MEwxMzUuNTg2IDc1LjU4NkMxMzkuMzkzIDc5LjM5MyAxNDIuNjA3IDc5LjM5MyAxNDYuNDE0IDc1LjU4NkwxODAgNDJNNjAgMzBIMTQwQzE0NS41MjMgMzAgMTUwIDM0LjQ3NzIgMTUwIDQwVjEzMEMxNTAgMTM1LjUyMyAxNDUuNTIzIDE0MCAxNDAgMTQwSDYwQzU0LjQ3NzIgMTQwIDUwIDEzNS41MjMgNTAgMTMwVjQwQzUwIDM0LjQ3NzIgNTQuNDc3MiAzMCA2MCAzMFoiIHN0cm9rZT0iIzlDQTNBRiIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+';
+                  target.alt = 'Image not available';
+                }}
               />
               <div className="mt-4 flex items-center justify-between">
                 <span className={`px-3 py-1 text-sm font-semibold rounded-full ${

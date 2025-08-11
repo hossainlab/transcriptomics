@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="dnaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00C49A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A2A4D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="url(#dnaGradient)" stroke="#00C49A" stroke-width="1"/>
+  
+  <!-- DNA Double Helix -->
+  <g stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Left helix strand -->
+    <path d="M8 6c0 0 1.5 3 4 3s4-3 4-3" />
+    <path d="M8 10c0 0 1.5 3 4 3s4-3 4-3" />
+    <path d="M8 14c0 0 1.5 3 4 3s4-3 4-3" />
+    <path d="M8 18c0 0 1.5 3 4 3s4-3 4-3" />
+    <path d="M8 22c0 0 1.5 3 4 3s4-3 4-3" />
+    
+    <!-- Right helix strand -->
+    <path d="M16 6c0 0 1.5 3 4 3s4-3 4-3" />
+    <path d="M16 10c0 0 1.5 3 4 3s4-3 4-3" />
+    <path d="M16 14c0 0 1.5 3 4 3s4-3 4-3" />
+    <path d="M16 18c0 0 1.5 3 4 3s4-3 4-3" />
+    <path d="M16 22c0 0 1.5 3 4 3s4-3 4-3" />
+    
+    <!-- Connecting base pairs -->
+    <line x1="10" y1="8" x2="22" y2="8" opacity="0.8" />
+    <line x1="10" y1="12" x2="22" y2="12" opacity="0.8" />
+    <line x1="10" y1="16" x2="22" y2="16" opacity="0.8" />
+    <line x1="10" y1="20" x2="22" y2="20" opacity="0.8" />
+    <line x1="10" y1="24" x2="22" y2="24" opacity="0.8" />
+  </g>
+</svg>

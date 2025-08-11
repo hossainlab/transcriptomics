@@ -11,10 +11,22 @@ export const RnaLogo = ({ className }: { className?: string }) => (
     strokeLinejoin="round"
     className={className}
   >
-    <path d="M7 20.2C8.6 21.2 10.6 22 13 22c4.4 0 8-3.6 8-8s-3.6-8-8-8c-1.6 0-3.1.5-4.4 1.3" />
-    <path d="M15 16c-2.2 0-4-1.8-4-4s1.8-4 4-4" />
-    <path d="M12 4.2C10.4 3.2 8.4 2.5 6 2.5c-4.4 0-8 3.6-8 8s3.6 8 8 8c1.6 0 3.1-.5 4.4-1.3" />
-    <path d="M4 12c2.2 0 4 1.8 4 4s-1.8 4-4 4" />
+    {/* Modern DNA/RNA representation - intertwined helical data strands */}
+    <circle cx="6" cy="4" r="1.5" fill="currentColor" opacity="0.9" />
+    <circle cx="18" cy="6" r="1.5" fill="currentColor" opacity="0.9" />
+    <circle cx="6" cy="10" r="1.5" fill="currentColor" opacity="0.9" />
+    <circle cx="18" cy="12" r="1.5" fill="currentColor" opacity="0.9" />
+    <circle cx="6" cy="16" r="1.5" fill="currentColor" opacity="0.9" />
+    <circle cx="18" cy="18" r="1.5" fill="currentColor" opacity="0.9" />
+    
+    {/* Connecting curves representing double helix */}
+    <path d="M6 4 Q12 2 18 6 Q12 8 6 10 Q12 14 18 12 Q12 16 6 16 Q12 20 18 18" 
+          fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.6" />
+    
+    {/* Data/sequence lines */}
+    <line x1="7.5" y1="4" x2="16.5" y2="6" strokeWidth="1" opacity="0.7" />
+    <line x1="7.5" y1="10" x2="16.5" y2="12" strokeWidth="1" opacity="0.7" />
+    <line x1="7.5" y1="16" x2="16.5" y2="18" strokeWidth="1" opacity="0.7" />
   </svg>
 );
 
@@ -93,5 +105,53 @@ export const DnaIcon = ({ className }: { className?: string }) => (
 export const DatabaseIcon = ({ className }: { className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375" />
+    </svg>
+);
+
+export const CodeIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+    </svg>
+);
+
+export const PlayIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+    </svg>
+);
+
+export const ClockIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+);
+
+export const BookOpenIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0118 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+    </svg>
+);
+
+export const DownloadIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+    </svg>
+);
+
+export const ExternalLinkIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+    </svg>
+);
+
+export const InfoIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+    </svg>
+);
+
+export const TagIcon = ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591L9.17 16.67c.458.458 1.201.458 1.659 0l4.318-4.318a2.25 2.25 0 001.591-.659V7.375A2.25 2.25 0 0014.625 5.125h-4.318a2.25 2.25 0 00-1.591.659L9.568 3zM7.5 7.5h.008v.008H7.5V7.5z" />
     </svg>
 );
