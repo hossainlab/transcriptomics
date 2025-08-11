@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { MODULE_DATA, WHAT_YOULL_LEARN, TESTIMONIALS, FAQS, INSTRUCTOR_INFO, TUTORIALS } from '../constants';
 import TestimonialCard from '../components/TestimonialCard';
 import FAQItem from '../components/FAQItem';
-import ShowcaseCharts from '../components/ShowcaseCharts';
 import { CheckIcon } from '../components/IconComponents';
+import VisualizationGallery from '../components/VisualizationGallery';
 
 const Highlight = ({ children }: { children: React.ReactNode }) => (
   <span className="bg-brand-highlight text-brand-dark px-1.5 py-0.5 rounded-md font-semibold">{children}</span>
@@ -50,6 +50,8 @@ const HomePage: React.FC = () => {
           <div className="mt-10">
             <a
               href="https://forms.gle/sK7qXPHmSDwoq1738"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-brand-accent text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg"
             >
               Enroll Now
@@ -100,7 +102,7 @@ const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             
             {/* Academic Excellence */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100">
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mr-4">
                   <span className="text-2xl">🎓</span>
@@ -133,7 +135,7 @@ const HomePage: React.FC = () => {
             </div>
 
             {/* Career Opportunities */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100">
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-1 hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mr-4">
                   <span className="text-2xl">🚀</span>
@@ -215,6 +217,8 @@ const HomePage: React.FC = () => {
             </p>
             <a
               href="https://forms.gle/sK7qXPHmSDwoq1738"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center bg-brand-accent text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg"
             >
               Start Your Journey Today
@@ -454,7 +458,7 @@ const HomePage: React.FC = () => {
               <div className="mb-6">
                 <h4 className="font-semibold text-brand-dark mb-2">Study Overview:</h4>
                 <p className="text-brand-secondary text-sm leading-relaxed mb-4">
-                  This landmark study used <strong>single-cell RNA-seq</strong> to analyze over 780,000 peripheral blood cells from 130 COVID-19 patients with varying disease severity, 
+                  This landmark study used <strong>single-cell RNA-seq</strong> to analyze 1.46 million peripheral blood cells from 196 COVID-19 patients with varying disease severity, 
                   creating the most comprehensive immune atlas of COVID-19 to date.
                 </p>
                 
@@ -511,7 +515,7 @@ const HomePage: React.FC = () => {
 
                 <div className="bg-gray-50 rounded-lg p-3">
                   <p className="text-xs text-brand-secondary">
-                    <strong>Reference:</strong> Echeverria, G.V., et al. "Single-Cell Analysis Reveals a Preexisting Drug-Resistant Subpopulation in the Luminal Breast Cancer Subtype." 
+                    <strong>Reference:</strong> Prieto-Vila, M., et al. "Single-Cell Analysis Reveals a Preexisting Drug-Resistant Subpopulation in the Luminal Breast Cancer Subtype." 
                     <em>Cancer Research</em> 79, 4412-4425 (2019). 
                     <a href="https://doi.org/10.1158/0008-5472.CAN-19-0122" className="text-brand-accent hover:underline" target="_blank" rel="noopener noreferrer">
                       DOI: 10.1158/0008-5472.CAN-19-0122
@@ -593,10 +597,10 @@ const HomePage: React.FC = () => {
 
                 <div className="bg-gray-50 rounded-lg p-3">
                   <p className="text-xs text-brand-secondary">
-                    <strong>Reference:</strong> Chen, H., et al. "Regulatory networks in plant responses to drought and cold stress." 
+                    <strong>Reference:</strong> Kim, J.S., et al. "Regulatory networks in plant responses to drought and cold stress." 
                     <em>Plant Physiology</em> 195, 170-189 (2024). 
-                    <a href="https://doi.org/10.1093/plphys/kiae022" className="text-brand-accent hover:underline" target="_blank" rel="noopener noreferrer">
-                      DOI: 10.1093/plphys/kiae022
+                    <a href="https://doi.org/10.1093/plphys/kiae105" className="text-brand-accent hover:underline" target="_blank" rel="noopener noreferrer">
+                      DOI: 10.1093/plphys/kiae105
                     </a>
                   </p>
                 </div>
@@ -636,6 +640,8 @@ const HomePage: React.FC = () => {
             </p>
             <a
               href="https://forms.gle/sK7qXPHmSDwoq1738"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center bg-brand-primary text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg"
             >
               Begin Your Research Journey
@@ -687,15 +693,18 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      {/* Charts Section */}
+
+      {/* Publication-Ready Visualizations Gallery */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-                <h2 className="text-3xl font-extrabold text-brand-dark sm:text-4xl">You'll Make Great Charts!</h2>
-                <p className="mt-4 text-lg text-brand-secondary">Create beautiful, publication-ready visualizations for your research.</p>
-            </div>
-            <ShowcaseCharts />
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-brand-dark sm:text-4xl">Publication-Ready Visualizations</h2>
+            <p className="mt-4 text-lg text-brand-secondary max-w-3xl mx-auto leading-relaxed">
+              Master the art of creating professional, publication-quality figures. 
+              These are real examples from our course modules that you'll learn to create yourself.
+            </p>
+          </div>
+          <VisualizationGallery />
         </div>
       </section>
 
@@ -719,7 +728,7 @@ const HomePage: React.FC = () => {
                   <p className="text-brand-secondary leading-relaxed">{tutorial.description}</p>
                 </div>
                 <div className="mt-6">
-                  <a href={tutorial.link} className="bg-brand-secondary text-white font-bold py-2 px-6 rounded-full text-base hover:bg-brand-primary transition-all transform hover:scale-105 shadow-md font-sans">
+                  <a href={tutorial.link} target="_blank" rel="noopener noreferrer" className="bg-brand-secondary text-white font-bold py-2 px-6 rounded-full text-base hover:bg-brand-primary transition-all transform hover:scale-105 shadow-md font-sans">
                     Watch Tutorial
                   </a>
                 </div>

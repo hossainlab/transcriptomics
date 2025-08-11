@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
           <div className="px-5 py-2"><Link to="/resources" className="text-base text-gray-300 hover:text-white">Resources</Link></div>
           <div className="px-5 py-2"><Link to="/faqs" className="text-base text-gray-300 hover:text-white">FAQs</Link></div>
           <div className="px-5 py-2"><Link to="/instructor" className="text-base text-gray-300 hover:text-white">Instructor</Link></div>
-          <div className="px-5 py-2"><a href="/#pricing" className="text-base text-gray-300 hover:text-white">Pricing</a></div>
+          <div className="px-5 py-2"><a href="https://forms.gle/sK7qXPHmSDwoq1738" target="_blank" rel="noopener noreferrer" className="text-base text-gray-300 hover:text-white">Enroll</a></div>
         </nav>
         <p className="text-center text-base text-gray-400 font-sans">
           &copy; {new Date().getFullYear()} Md. Jubayer Hossain. All rights reserved.

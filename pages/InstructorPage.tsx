@@ -34,19 +34,22 @@ const InstructorPage: React.FC = () => {
                 "My goal is to demystify bioinformatics and computational biology. I believe that with the right guidance and hands-on practice, any biologist can become proficient in data analysis. This course is designed to be a bridge, empowering you to take control of your data, ask more ambitious questions, and accelerate your research. I focus on building a strong conceptual foundation before diving into the code, ensuring you understand not just 'how' but also 'why'."
             </blockquote>
 
-            <h2>Selected Publications</h2>
+            <h2>Research Areas</h2>
             <ul>
-                <li>Finch, A., et al. (2023). "Integrative multi-omic analysis of neurodevelopment." <em>Nature Genetics</em>.</li>
-                <li>Finch, A., et al. (2021). "A scalable algorithm for single-cell trajectory inference." <em>Cell Systems</em>.</li>
-                <li>Finch, A., & Doe, J. (2019). "Gene regulatory network dynamics in cancer progression." <em>Science</em>.</li>
+                <li>Transcriptomics and Gene Expression Analysis</li>
+                <li>Single-Cell RNA Sequencing Data Analysis</li>
+                <li>Machine Learning Applications in Healthcare</li>
+                <li>Biomarker Discovery for Cancer and Neurological Disorders</li>
+                <li>AI-Driven Precision Medicine</li>
+                <li>Bioinformatics Education and Training</li>
             </ul>
 
             <div className="mt-16 text-center bg-brand-light p-8 rounded-lg border border-gray-200">
                 <h3 className="text-2xl font-bold text-brand-primary mt-0">Ready to start learning?</h3>
                 <p className="mt-4 text-lg text-brand-secondary">Join the course and gain the skills you need to excel in modern biological research.</p>
-                <Link to="/#pricing" className="mt-6 inline-block bg-brand-accent text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition-colors transform hover:scale-105">
+                <a href="https://forms.gle/sK7qXPHmSDwoq1738" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block bg-brand-accent text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition-colors transform hover:scale-105">
                     Enroll Now
-                </Link>
+                </a>
             </div>
         </div>
       </div>
