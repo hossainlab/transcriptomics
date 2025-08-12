@@ -4,29 +4,59 @@ export const RnaLogo = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    fill="currentColor"
     className={className}
   >
-    {/* Modern DNA/RNA representation - intertwined helical data strands */}
-    <circle cx="6" cy="4" r="1.5" fill="currentColor" opacity="0.9" />
-    <circle cx="18" cy="6" r="1.5" fill="currentColor" opacity="0.9" />
-    <circle cx="6" cy="10" r="1.5" fill="currentColor" opacity="0.9" />
-    <circle cx="18" cy="12" r="1.5" fill="currentColor" opacity="0.9" />
-    <circle cx="6" cy="16" r="1.5" fill="currentColor" opacity="0.9" />
-    <circle cx="18" cy="18" r="1.5" fill="currentColor" opacity="0.9" />
+    {/* RNA Double Helix Structure - Icons8 style */}
+    {/* Left strand backbone */}
+    <path
+      d="M5 2 Q7 4 5 6 Q3 8 5 10 Q7 12 5 14 Q3 16 5 18 Q7 20 5 22"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
     
-    {/* Connecting curves representing double helix */}
-    <path d="M6 4 Q12 2 18 6 Q12 8 6 10 Q12 14 18 12 Q12 16 6 16 Q12 20 18 18" 
-          fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.6" />
+    {/* Right strand backbone */}
+    <path
+      d="M19 2 Q17 4 19 6 Q21 8 19 10 Q17 12 19 14 Q21 16 19 18 Q17 20 19 22"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
     
-    {/* Data/sequence lines */}
-    <line x1="7.5" y1="4" x2="16.5" y2="6" strokeWidth="1" opacity="0.7" />
-    <line x1="7.5" y1="10" x2="16.5" y2="12" strokeWidth="1" opacity="0.7" />
-    <line x1="7.5" y1="16" x2="16.5" y2="18" strokeWidth="1" opacity="0.7" />
+    {/* Base pairs - nucleotide connections */}
+    <g opacity="0.8">
+      {/* Adenine-Uracil pairs */}
+      <circle cx="6" cy="4" r="1.5" fill="currentColor" />
+      <circle cx="18" cy="4" r="1.5" fill="currentColor" />
+      <line x1="7.5" y1="4" x2="16.5" y2="4" stroke="currentColor" strokeWidth="1.5" />
+      
+      <circle cx="6" cy="8" r="1.5" fill="currentColor" />
+      <circle cx="18" cy="8" r="1.5" fill="currentColor" />
+      <line x1="7.5" y1="8" x2="16.5" y2="8" stroke="currentColor" strokeWidth="1.5" />
+      
+      <circle cx="6" cy="12" r="1.5" fill="currentColor" />
+      <circle cx="18" cy="12" r="1.5" fill="currentColor" />
+      <line x1="7.5" y1="12" x2="16.5" y2="12" stroke="currentColor" strokeWidth="1.5" />
+      
+      <circle cx="6" cy="16" r="1.5" fill="currentColor" />
+      <circle cx="18" cy="16" r="1.5" fill="currentColor" />
+      <line x1="7.5" y1="16" x2="16.5" y2="16" stroke="currentColor" strokeWidth="1.5" />
+      
+      <circle cx="6" cy="20" r="1.5" fill="currentColor" />
+      <circle cx="18" cy="20" r="1.5" fill="currentColor" />
+      <line x1="7.5" y1="20" x2="16.5" y2="20" stroke="currentColor" strokeWidth="1.5" />
+    </g>
+    
+    {/* Minor grooves - helical structure indicators */}
+    <g opacity="0.3">
+      <ellipse cx="12" cy="6" rx="8" ry="1" fill="currentColor" />
+      <ellipse cx="12" cy="10" rx="8" ry="1" fill="currentColor" />
+      <ellipse cx="12" cy="14" rx="8" ry="1" fill="currentColor" />
+      <ellipse cx="12" cy="18" rx="8" ry="1" fill="currentColor" />
+    </g>
   </svg>
 );
 

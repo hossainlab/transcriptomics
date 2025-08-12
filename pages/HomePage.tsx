@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MODULE_DATA, WHAT_YOULL_LEARN, TESTIMONIALS, FAQS, INSTRUCTOR_INFO, TUTORIALS } from '../constants';
-import TestimonialCard from '../components/TestimonialCard';
+import { MODULE_DATA, WHAT_YOULL_LEARN, /* TESTIMONIALS, */ FAQS, INSTRUCTOR_INFO, TUTORIALS } from '../constants';
+// import TestimonialCard from '../components/TestimonialCard';
 import FAQItem from '../components/FAQItem';
 import { CheckIcon } from '../components/IconComponents';
 import VisualizationGallery from '../components/VisualizationGallery';
@@ -738,7 +738,8 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section - Commented out until testimonials are available */}
+      {/* 
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -754,6 +755,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+      */}
 
       {/* Instructor Section */}
        <section className="py-16 sm:py-24 bg-brand-light">
