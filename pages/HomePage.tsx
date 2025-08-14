@@ -809,10 +809,10 @@ const HomePage: React.FC = () => {
                   <div className="flex justify-center items-center gap-4 mb-4">
                     <div className="text-center">
                       <div className="text-5xl md:text-7xl font-black text-brand-dark font-sans">
-                        ৳10,000
+                        ৳10,200
                       </div>
                       <div className="text-xl md:text-2xl font-semibold text-red-500 line-through opacity-75">
-                        ৳20,000
+                        ৳20,400
                       </div>
                     </div>
                     <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold transform rotate-12">
