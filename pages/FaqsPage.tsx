@@ -386,7 +386,7 @@ const FaqsPage: React.FC = () => {
             </a>
             
             <p className="text-sm text-brand-secondary mt-4 italic">
-              💯 30-day money-back guarantee • 🔒 Secure payment • 📜 Certificate included
+              💯 Quality is assured • 🔒 Secure payment • 📜 Certificate included
             </p>
           </div>
         </div>

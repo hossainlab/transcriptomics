@@ -16,10 +16,14 @@
     "recharts": "^3.1.0"
   },
   "devDependencies": {
+    "@modelcontextprotocol/inspector": "^0.16.3",
+    "@modelcontextprotocol/sdk": "^1.17.2",
+    "@playwright/test": "^1.54.2",
     "@types/node": "^22.14.0",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "playwright": "^1.54.2",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }

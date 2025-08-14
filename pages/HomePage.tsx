@@ -795,7 +795,7 @@ const HomePage: React.FC = () => {
             {/* Popular Badge */}
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
               <div className="bg-gradient-to-r from-brand-accent to-brand-primary text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
-                ⭐ Most Popular
+                ⭐ Best Value
               </div>
             </div>
 
@@ -825,7 +825,7 @@ const HomePage: React.FC = () => {
                       Complete Course Access
                     </h3>
                     <p className="text-brand-secondary">
-                      One-time payment • Lifetime access • No subscriptions
+                      One-time payment • Lifetime recoding access
                     </p>
                   </div>
 
@@ -845,7 +845,7 @@ const HomePage: React.FC = () => {
                   </div>
 
                   <p className="text-sm text-brand-secondary italic">
-                    💯 30-day money-back guarantee • 🔒 Secure payment
+                    💯 Quality is assured • 🔒 Secure payment
                   </p>
                 </div>
 

@@ -435,7 +435,7 @@ const PipelinePage: React.FC = () => {
               <ArrowRightIcon className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <p className="text-sm text-brand-secondary mt-4 italic">
-              💯 30-day money-back guarantee • 🔒 Secure payment • 📜 Certificate included
+              💯 Quality is assured • 🔒 Secure payment • 📜 Certificate included
             </p>
           </div>
         </div>
