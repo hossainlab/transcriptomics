@@ -84,7 +84,7 @@ Yes! You are encouraged to bring your own **bulk or single-cell RNA-seq data** t
 
 Yes! If you found this course helpful in preparing a manuscript or research project, you are welcome to acknowledge it. Please link to the course GitHub repository and cite the instructor as:
 
-> Hossain MJ. Transcriptomics Data Analysis (TDA): An Open-Access, Hands-On RNA-seq Workshop. 2025. https://github.com/tda 
+> Hossain MJ. Transcriptomics Data Analysis (TDA): An Open-Access, Hands-On RNA-seq Workshop. 2025. https://github.com/transcriptomics 
 
 ## Resources 
 ### Bulk RNA-seq Data Sources
